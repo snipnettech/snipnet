@@ -1,4 +1,5 @@
 <?php
+require_once "class/settings.class.php";
 $page_title = $pt;
 $page_desc = $ds;
 $page_keyw = $kw;

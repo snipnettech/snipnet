@@ -23,17 +23,42 @@ try{
 // Set the Time Zone
 date_default_timezone_set('Africa/Lagos');
 
-require_once "class/auth.class.php";
 
-$sel_query="Select * from settings ORDER BY id desc;";
-$result = mysqli_query($link,$sel_query);
-while($row = mysqli_fetch_assoc($result)) {
-$base_url = $row["b_url"];
-$short_name = $row["short_name"];
-$site_title=$row["title"];
-$foot_desc=$row["foot_desc"];
-$acc_curency=$row["default_curency"];
-}
-require_once "class/user.class.php";
-require_once "class/time.class.php";
+//load settings classes as needed
+
+   //if call from within main folder adjust the path
+   $auth_class = 'class/auth.class.php';
+   $user_class = 'class/user.class.php';
+   $time_class = 'class/time.class.php';
+   $formkey_class = 'class/formkey.class.php';
+   if ( file_exists($auth_class) && file_exists($user_class) && file_exists($time_class) && file_exists($formkey_class)) {
+      require_once $auth_class;
+	  require_once $user_class;
+	  require_once $time_class;
+	  require_once $formkey_class;
+   }  
+   
+   //if call from within sub folders adjust the path
+   $auth_class = '../class/auth.class.php';
+   $user_class = '../class/user.class.php';
+   $time_class = '../class/time.class.php';
+   $formkey_class = '../class/formkey.class.php';
+   if ( file_exists($auth_class) && file_exists($user_class) && file_exists($time_class ) && file_exists($formkey_class)) {
+      require_once $auth_class;
+	  require_once $user_class;
+	  require_once $time_class;
+	  require_once $formkey_class;
+   }
+   
+   //if call from within sub folders adjust the path
+   $auth_class = '../../class/auth.class.php';
+   $user_class = '../../class/user.class.php';
+   $time_class = '../../class/time.class.php';
+   $formkey_class = '../../class/formkey.class.php';
+   if ( file_exists($auth_class) && file_exists($user_class) && file_exists($time_class ) && file_exists($formkey_class)) {
+      require_once $auth_class;
+	  require_once $user_class;
+	  require_once $time_class;
+	  require_once $formkey_class;
+   }
 ?>

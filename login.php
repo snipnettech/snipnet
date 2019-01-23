@@ -6,9 +6,7 @@ $pt = "Login";
 $ds = "Snipnetworks we bring good projects to life";
 $kw = "Snipnetworks, snipnet";
 
-//Require the class
-require('class/formkey.class.php');
-//Start the class
+//Start the formkey class
 $formKey = new formKey();
 
 // Define variables and initialize with empty values

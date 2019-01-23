@@ -6,9 +6,7 @@ $pt = "Account Settings";
 $ds = "Configure account, billing & notification settings.";
 $kw = "Configure, account, billing, notification, settings";
 
-//Require the class
-require('class/formkey.class.php');
-//Start the class
+//Start the formkey class
 $formKey = new formKey();
 
 if(isset($_FILES["file"])) {
